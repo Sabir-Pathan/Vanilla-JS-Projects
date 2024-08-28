@@ -1,0 +1,27 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    background-color: rgba(226, 211, 211, 0.281);
+    
+}
+
+div{
+   margin: 50px;
+   height: 40vh;
+}
+.design{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    margin: 5px;
+    font-size: bold;
+
+}
+.inputValue{
+    background-color: #fff;
+    color: black;
+    outline: none;
+}
