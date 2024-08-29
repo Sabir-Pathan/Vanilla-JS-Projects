@@ -1,0 +1,48 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.main{
+    height: 100vh;
+    background :url('https://media.istockphoto.com/id/1979955108/photo/beautiful-tree-lined-road-in-the-tunnel-of-trees-maharashtra-india-asia.jpg?s=612x612&w=0&k=20&c=4rEe0x0LmUR6cCaGtgoKU1JW_b3Pz1i0VERu0kHQH_w=') no-repeat center / cover fixed;
+    color: white;
+}
+.container{
+    padding: 15vh 30vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.heading{
+border:2px solid White;
+padding: 10px;
+border-radius: 7px;
+background-color: black;
+}
+
+.para{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 7px;
+    padding: 10px 20px;
+    background-color:#f1f1f1;
+    color: black;
+}
+h4{
+    color:red
+}
+#changeQuote{
+    padding: 7px 25px;
+    background-color:royalblue;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size:medium;
+    font-weight: 700;
+}
