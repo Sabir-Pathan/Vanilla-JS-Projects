@@ -8,15 +8,25 @@
     height: 100vh;
     background: url('https://media.istockphoto.com/id/1821704693/photo/aerial-top-view-of-green-trees-in-forest-drone-view-of-dense-green-tree-captures-co2-green.webp?b=1&s=612x612&w=0&k=20&c=kwFvVxu1Fn0M8U8MS5Lnd8xsh4vbCm8DVmMEXabrwHE=') no-repeat center / cover fixed; 
 }
+.container{
+    position: relative;
+
+}
 .popup{
     /* transform: translate(-50% , -50%);
     top:50%;
     left: 50%; */
+    position: absolute;
     background-color: white;
     width: fit-content;
-    padding: 20px;
+    padding: 15px 20px;
     display: flex;
+    align-items: center;
+    flex-direction: row;
     gap: 10px;
+    border-radius: 7px;
+    margin: 25%;
+    visibility:hidden;
 }
 #open-popun-btn{
     margin-top: 70vh;
@@ -28,4 +38,12 @@
     border: 2px solid white;
     cursor: pointer;
     font-weight: 700;
+}
+#close-btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+#close-btn:hover{
+    color: red;
 }
