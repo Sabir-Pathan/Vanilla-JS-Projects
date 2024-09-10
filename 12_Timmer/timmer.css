@@ -1,0 +1,58 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.display{
+    /* border: 1px solid red; */
+    width: 20%;
+    height: 25%;   
+    background-color: beige;
+    border-radius: 30px;
+    
+}
+
+#timmer{
+    margin: 10px;
+    text-align: center;
+    font-size: 3rem;
+    color: rgb(24, 229, 191);
+}
+
+.buttons{
+    
+    text-align: center;
+    margin-top: 50px;
+}
+button{
+    margin: 0  20px;
+    border: none;
+    background-color: transparent;
+}
+button i {
+    color: white;
+}
+.fa-solid{
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 10px;
+        
+}
+#play{
+    background-color: green;
+}
+
+#pause{
+    background-color: orange;
+
+}
+#reset{
+    background-color:red;
+}
