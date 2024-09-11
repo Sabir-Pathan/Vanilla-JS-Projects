@@ -3,22 +3,24 @@
 let startStopBtn = document.getElementById('startStopBtn')
 let resetBtn = document.getElementById('resetBtn')
 
+
 // variable for timmer
 
 let second = 0;
 let minutes = 0;
 let hourse = 0;
 
-// variable for leading timmer
+// variable for leading timer
 
 let leadingSecond = 0;
 let leadingMinutes = 0;
 let leadingHourse = 0;
 
 
-// variable for stop clearInterval
+// variable for stop clearInterval & timer status
 
-let clInterval;
+let clInterval=null;
+let timerStatus = 'started'
 
 // stop watch function
 
@@ -51,30 +53,53 @@ if(minutes < 10){
 }
 
 else{
+    leadingMinutes = minutes;
+
+}
+
+if(hourse < 10){
+    leadingHourse = '0' + hourse;
+}
+
+else{
     leadingHourse = hourse;
 
 }
 
-
-    let displayTimmer = document.getElementById('timmer').innerText = hourse + ':' + minutes + ':' + leadingSecond ;
+    let displayTimmer = document.getElementById('timer').innerText = leadingHourse + ':' + leadingMinutes + ':' + leadingSecond ;
 
 }
-
-// setInterval(stopWatch , 100)
-
+ 
 startStopBtn.addEventListener('click', ()=>
     {
-        console.log('startStopbtn click huva');
-        clInterval= setInterval(stopWatch , 100)
-        
-        
-    });
+if(timerStatus === 'started')
+{
+    console.log('hello')
+    clInterval= setInterval(stopWatch , 1);
+startStopBtn.innerHTML =`<i class="fa-solid fa-pause" id='pause'></i>`
+    timerStatus = 'stop'
+}
+else {
+
+    clearInterval(clInterval)
+    timerStatus = 'started';
+    
+}
+});
 
 
 resetBtn.addEventListener('click', ()=>{
-    // console.log('reset click huva');
-   clearInterval(clInterval)
-
+    
+    
+    clearInterval(clInterval)
+    
+    second =0;
+    minutes=0;
+    hourse=0;
+    
+    
+    document.getElementById('timer').innerText = '00:00:00' ;
+    startStopBtn.innerHTML=`<i class="fa-solid fa-play" id="play"></i>`
 
     
     

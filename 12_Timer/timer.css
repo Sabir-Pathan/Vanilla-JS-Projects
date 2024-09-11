@@ -19,7 +19,7 @@ body{
     
 }
 
-#timmer{
+#timer{
     margin: 10px;
     text-align: center;
     font-size: 3rem;
@@ -32,19 +32,18 @@ body{
     margin-top: 50px;
 }
 button{
-    margin: 0  20px;
+    margin: 0 10px;
     border: none;
-    background-color: transparent;
+    cursor: pointer;
+        
 }
 button i {
     color: white;
-}
-.fa-solid{
     font-size: 2rem;
     padding: 10px;
     border-radius: 10px;
-        
 }
+
 #play{
     background-color: green;
 }
