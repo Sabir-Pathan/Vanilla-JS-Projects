@@ -1,0 +1,35 @@
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.todoinput{
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#task-name{
+    padding: 9px;
+    width: 250px;
+    border: 1px solid green;
+    border-radius: 5px;
+    
+    font-size:15px;
+    outline: none;
+}
+
+#add-Btn{
+    padding: 9px 20px;
+    border: 1px solid green;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+#add-Btn i {
+    color: green;
+}
