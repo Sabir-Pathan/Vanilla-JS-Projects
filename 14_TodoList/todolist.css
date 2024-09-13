@@ -26,10 +26,67 @@ body{
     padding: 9px 20px;
     border: 1px solid green;
     background-color: #fff;
+    color: green;
     border-radius: 5px;
     margin: 0 10px;
+    transition: .5s;
 }
 
-#add-Btn i {
-    color: green;
+#add-Btn:hover{
+    background-color: green;
+    color: #fff;
+}
+
+/* style from JS */
+
+.task {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+.task li {
+    flex:4;
+    list-style: none;
+    font-size: 1.3rem;
+    margin: 5px;
+}
+
+.task button {
+  font-size: 1.3rem;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 10px;
+  /* border: none; */
+}
+
+.chkTask{
+    color: orange;
+    border: solid 2px orange;
+margin: 5px;
+transition: .5s;
+}
+.chkTask:hover{
+    color: white;
+    background-color: orange;
+    border: solid 2px orange;
+margin: 5px;
+}
+
+.trash{
+    color: red;
+    border: solid 2px red;
+    transition: .5s;
+}
+
+.trash:hover{
+    color: white;
+    background-color: red;
+    border: solid 2px red;
 }
