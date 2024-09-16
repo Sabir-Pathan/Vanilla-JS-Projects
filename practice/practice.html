@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered User Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Filtered Users</h1>
+    <input type="text" id="searchInput" placeholder="Search by city or name" />
+    <button onclick="filterUsers()">Filter</button>
+
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Filtered rows will be inserted here by JavaScript -->
+        </tbody>
+    </table>
+
+    <script src="practice.js"></script>
+</body>
+</html>

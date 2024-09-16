@@ -51,28 +51,76 @@ const persons = [
     { SrNumber: 50, firstName: "Ankush", lastName: "Mehta", emailId: "ankush.mehta@example.com", city: "Ahmedabad", stateName: "Gujarat", jobTitle: "Mechanical Engineer", phoneNumber: "9332244556" }
   ];
   
-let userData = document.getElementById('userdata');
 
-let names = '';
-persons.forEach(elem=>{
-    // console.log(elem.firstName);
-    return names += ` <tr>
-        <td>${elem.SrNumber}</td>
-        <td>${elem.firstName}</td>
-        <td>${elem.lastName}</td>
-        <td>${elem.emailId}</td>
-        <td>${elem.city}</td>
-        <td>${elem.stateName}</td>
-        <td>${elem.jobTitle}</td>
-        <td>${elem.phoneNumber}</td>
-     </tr>`;
-    
-    
-    
+// element selector
+let tableData = document.getElementById('userdata'); //Selecting table body
+// console.log(tableData);
+
+// ##############################################
+
+// loop on All user data
+// variable declaration for store received looped data
+let personInformation = ''; //asign value null
+
+persons.forEach(user=>{
+// console.log(user.firstName);
+
+
+  return personInformation += `<tr>
+  <td>${user.SrNumber}</td>
+  <td>${user.firstName}</td>
+  <td>${user.lastName}</td>
+  <td>${user.emailId}</td>
+  <td>${user.city}</td>
+<td>${user.stateName}</td>
+<td>${user.jobTitle}</td>
+<td>${user.phoneNumber}</td>
+ </tr> `;
 });
-console.log(names);
+// console.log(personInformation);
 
-userData.innerHTML = names;
-console.log(userData);
+tableData.innerHTML = personInformation; // adding data in table
+
+// ######################################################
+
+// Apllying filter for search user
+
+//variable declaration
+
+let filteredUser ='';
+let filteredPersonInformation = '';
+
+// element selection
+let srchFirstName = document.getElementById('Firstname');
+// console.log(srchFirstName);
 
 
+//adding event
+
+srchFirstName.addEventListener('input',()=>{
+  // console.log(srchFirstName.value); // grab input value
+
+  filteredUser = persons.filter(newUser=>{
+
+   return newUser.firstName.startsWith(srchFirstName.value)
+  })
+  // console.log(filteredUser); received new array as per search name
+
+  filteredUser.forEach(user=>{
+
+    return filteredPersonInformation +=`<tr>
+  <td>${user.SrNumber}</td>
+  <td>${user.firstName}</td>
+  <td>${user.lastName}</td>
+  <td>${user.emailId}</td>
+  <td>${user.city}</td>
+<td>${user.stateName}</td>
+<td>${user.jobTitle}</td>
+<td>${user.phoneNumber}</td>
+ </tr> `;
+
+  })
+  
+  tableData.innerHTML = filteredPersonInformation; // show user data 
+  
+})
