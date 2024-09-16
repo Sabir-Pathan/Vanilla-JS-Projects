@@ -21,8 +21,8 @@ pers += `<div id="person">
         
     
 });
-
 persons.innerHTML = pers ;
+
 
 let matching;
 search.addEventListener('input', ()=>{
