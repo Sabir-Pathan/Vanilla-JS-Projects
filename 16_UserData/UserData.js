@@ -85,10 +85,7 @@ tableData.innerHTML = personInformation; // adding data in table
 
 // Apllying filter for search user
 
-//variable declaration
 
-let filteredUser ='';
-let filteredPersonInformation = '';
 
 // element selection
 let srchFirstName = document.getElementById('Firstname');
@@ -99,13 +96,16 @@ let srchFirstName = document.getElementById('Firstname');
 
 srchFirstName.addEventListener('input',()=>{
   // console.log(srchFirstName.value); // grab input value
-
+  let filteredUser;
+  
   filteredUser = persons.filter(newUser=>{
-
-   return newUser.firstName.startsWith(srchFirstName.value)
+    
+    return newUser.firstName.startsWith(srchFirstName.value)
   })
-  // console.log(filteredUser); received new array as per search name
-
+  console.log(filteredUser); //received new array as per search name
+  
+  //variable declaration
+  let filteredPersonInformation = '';
   filteredUser.forEach(user=>{
 
     return filteredPersonInformation +=`<tr>
