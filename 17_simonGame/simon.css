@@ -23,6 +23,7 @@ body{
     gap: 2%;
     align-items: center;
     justify-content: center;
+    transition: 0.3s;
     
 }
 .btn{
@@ -32,17 +33,38 @@ gap: 2px;
 border-radius: 10px;
 background-color: white;
 border: 2px solid royalblue;
-transition: 0.5s;
+cursor: pointer;
+
 }
-#btn1{
+.red{
     background-color: red;
 }
-#btn2{
+.blue{
+    background-color:blue;
+    
+}
+.green{
     background-color: green;
 }
-#btn3{
-    background-color:blue;
-}
-#btn4{
+.yellow{
     background-color: yellow;
+}
+#Start-Game{
+    background-color: white;
+    padding: 7px;
+    border: 2px solid royalblue;
+    border-radius: 7px;
+    margin: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    
+}
+
+/* JavaScript Classes */
+.btnflash{
+    background-color: white;
+}
+
+.user_Flash_Btn{
+background-color: darkgray;
 }
