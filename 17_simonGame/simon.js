@@ -15,67 +15,100 @@ let btnStartGame = document.getElementById('Start-Game');
 // start Game
 
 btnStartGame.addEventListener('click',()=>{
+    //checking game status
     if(gameStatus===false){
 
-        btnStartGame.innerText='Exit Game'
+        btnStartGame.innerText='End Game';
         gameStatus=true;
+
+        // call fnc for game next level
         levelUp()
+    }else{
+    
+        resetGame()
     }
-    else{
 
-    }
 });
+// fnc for reset Game
+function resetGame(){
+    btnStartGame.innerText='Start Game';
+        gameStatus=false;
+        level=0;
+        score.innerText='Click on Start Button to start Game';
+        userSeq=[];
+        gameSeq=[];
+        document.body.style.backgroundColor='red';
+        setTimeout(()=>{
 
-function levelUp(){
+            document.body.style.backgroundColor='white';
+        },350);
+}
+
+//level Up fnc creation
+
+function levelUp (){
     userSeq=[];
     level++;
     score.innerText=`Level : ${level}`;
-    let randomNumber = Math.floor(Math.random()*4);
-    let randomClassIndex = btnColorClassName[randomNumber];
-    let flashBtn = document.querySelector(`.${randomClassIndex}`);
-    gameSeq.push(randomClassIndex);
-    console.log(gameSeq);
-    
 
-    GameFlashBtn(flashBtn)
+    // random button selection for flash
+    let randomNumber = Math.floor(Math.random()*4);
+    let randomClassName = btnColorClassName[randomNumber];
+    let randomBtn = document.querySelector(`.${randomClassName}`);
+    // console.log(randomBtn);
+    //adding random class name in game sequance
+    gameSeq.push(randomClassName);
+    console.log(gameSeq);
+    // calling fnc for flash random button and passing random button as a argument
+    gameFlashBtn(randomBtn)
 };
 
-function GameFlashBtn(flashBtn){
-    flashBtn.classList.add('btnflash');
-    setTimeout(()=>{
-        flashBtn.classList.remove('btnflash')
-    },350)
- 
-}
-btns.addEventListener('click',(btn)=>{
-let userFlashBtn = btn.target;
-// console.log(userFlashBtn);
 
-userFlashBtn.classList.add('user_Flash_Btn');
-setTimeout(()=>{
-    userFlashBtn.classList.remove('user_Flash_Btn');
-},450);
-let userclass = userFlashBtn.id;
-userSeq.push(userclass)
+// gameFlashBtn fnc Creation and accepting random button as a parameter
+
+function gameFlashBtn (btn){
+    // adding flash class dynamicaly     
+    btn.classList.add('btnflash');
+
+    // removing flash class
+    setTimeout(()=>{
+        btn.classList.remove('btnflash')
+    },450);
+};
+
+// adding click event on buttons parent
+btns.addEventListener('click',(btn)=>{
+    // variable creation for save target button id
+    let targetBtn = btn.target.id;
+    //adding click id name in game user sequance
+    userSeq.push(targetBtn);   
 console.log(userSeq);
 
+//creating fnc for compairing userSeq and gameSeq
 
 checkAns(userSeq.length-1);
+
 });
 
-function checkAns (indx){
-    if (gameSeq[indx] === userSeq[indx]) {
-        console.log('index match');
-        
-        if(gameSeq.length == userSeq.length){
+function checkAns(indx){
+    // let indx = level;
+    if(gameSeq[indx]===userSeq[indx]){
+        if(gameSeq.length === userSeq.length){
 
-            console.log('you are correct level up');
-            setTimeout(levelUp,1000)
-        }
+            // console.log(`gameSeq Indx${gameSeq[indx]} , userSeq Indx${userSeq[indx]}`);
+             
+            // delay in levelup fnc call
+            setTimeout(levelUp,450)
         
+        }
     }
     else{
-        console.log('wrong');
+        score.innerText=`Game Over ! Your Final Score Is: ${level}`;
+        document.body.style.backgroundColor='red';
+        setTimeout(()=>{
+
+            document.body.style.backgroundColor='white';
+        },350);
         
     }
 }
