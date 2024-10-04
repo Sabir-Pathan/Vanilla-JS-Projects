@@ -1,0 +1,113 @@
+*{
+    padding: 0%;
+margin: 0%;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(231, 228, 228);
+}
+#navbar{
+    /* border: 2px solid red; */
+    height: 40%;
+}
+.nav-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 20px;
+}
+.nav-center{
+    /* border: 2px solid green; */
+    width: 40%;
+    font-weight: 700;
+}
+.nav-center #item{
+    display: flex;
+    justify-content: space-between;
+    
+}
+li{
+    list-style: none;
+}
+.nav-icons{
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+}
+.icons{
+    padding: 7px;
+    border: 1px solid white;
+    border-radius: 55%;
+    transition: 0.7s;
+    color: white;
+    background-color: rgb(1, 108, 72);
+}
+.icons:hover{
+    background-color: white;
+    color: rgb(1, 108, 72);
+    border: 1px solid black;
+
+}
+#nav-toggle-btn{
+    background-color: white;
+    border: 2px solid rgb(4, 97, 66);
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: 900;
+    display: none;
+    transition: 0.5s;
+}
+#nav-toggle-btn:hover{
+    background-color: rgba(198, 195, 195, 0.61);
+    color:  rgb(4, 97, 66) ;
+    border:2px solid black;
+
+}
+/* toggle navbar */
+.toggle{
+    border-top:  2px solid rgb(140, 136, 136);
+    height: 0;
+    overflow: hidden;
+    background-color: white; 
+    transition: 1s; 
+}
+.toggle-navbar{
+    height: 9.5rem;
+    
+}
+
+#toggle-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: 700;
+}
+.toggle-li{
+    border-bottom:1px solid rgb(140, 136, 136) ;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
+    transition: 0.5s;
+}
+.toggle-li:hover{
+    border-bottom:1px solid white;
+    background-color: rgba(96, 95, 95, 0.2);
+    color: rgb(7, 112, 40);
+    font-weight: 900;
+    cursor: pointer;
+}
+@media 
+    (max-width: 800px){
+        .nav-center{
+            display: none;
+        }
+        #nav-toggle-btn{
+            display: block;
+        }
+.nav-icons{
+    display: none;
+}
+    }
