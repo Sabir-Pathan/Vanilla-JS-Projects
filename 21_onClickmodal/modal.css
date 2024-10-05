@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.container{
+    background-color: rgb(197, 195, 195);
+    width: 40%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px 0px rgb(163, 161, 161);
+
+}
+#openModal-Btn{
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 700;
+    color: white;
+transition: 0.5s;
+cursor: pointer;
+}
+#openModal-Btn:hover{
+    color: black;
+    background-color: white;
+    border:2px solid black;
+}
+.overlay{
+position: fixed;
+top: 0%;
+left: 0%;
+background-color: rgba(173, 246, 222, 0.8);
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+visibility: hidden;
+}
+.close-Btn{
+    position: absolute;
+    font-weight: 900;
+    font-size: 2rem;
+    color: red;
+    top:0%;
+    right: 10px;
+    cursor: pointer;
+}
+.overlay-Msg{
+    background-color: rgb(140, 138, 138);
+    width: 40%;
+    height: 30%;
+    box-shadow: 5px 5px 0px 0px rgb(163, 161, 161);
+    color: white;
+    display: flex;
+align-items: center;
+padding: 10px;
+justify-content: center;
+text-align: center;      
+}
+
+.overlay-class{
+visibility: visible;
+}
