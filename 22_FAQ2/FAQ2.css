@@ -9,44 +9,63 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(215, 213, 213, 0.5);
+    background-color: rgba(215, 213, 213, 0.9);
+
 }
-.main{
+.FAQ-Main{
     width: 50%;
-    height: 70%
-    padding: 10px;
 }
 .heading{
     text-align: center;
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin-bottom: 10px;
 }
- .FAQ-Wraper{
-    background-color: white;
+.FAQ{
+    margin-top: 10px;
     padding: 10px;
-    margin: 10px 0px;
- }
+    background-color: white;
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
 .quation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-weight: 900;
-    margin-bottom: 10px;
-    transition: 0.7s;
-    position: relative;
-    
+  
 }
-.answer{
-    margin-bottom: 10px;
-    height: 0;
+
+.hide-show-Btn{
+    background-color: white;
+    font-weight: 900;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+flex-direction: column;
+border: none;
+
+}
+.answer {
+    max-height: 0;
+    opacity: 0;
     overflow: hidden;
-
+    transition: 1s;
+    border-top: 2px solid darkgray;
+    margin-top: 10px;
+    padding-top: 10px;
 }
-.quation::after{
-    content: '+';
-    position: absolute;
-right: 0px;
-font-weight: 900;
+/* toggle show hide code */
+
+.active .answer{
+    max-height: 500px; /* Adjust this value based on your content */
+    opacity: 1;
 }
 
-.answerdisplay{
-    height: 200px;
+.minus-Btn{
+    display: none;
+}
+
+.active .minus-Btn{
+    display: block;
+}
+.active .plus-Btn{
+    display: none;
 }
