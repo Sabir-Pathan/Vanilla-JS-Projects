@@ -47,7 +47,7 @@ border: none;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: 1s;
+    transition: .5s;
     border-top: 2px solid darkgray;
     margin-top: 10px;
     padding-top: 10px;
