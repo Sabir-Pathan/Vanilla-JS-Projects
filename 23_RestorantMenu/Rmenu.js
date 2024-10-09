@@ -1,28 +1,29 @@
+// menu array
 const menu = [
     // Breakfast Items
     {
-      productImg: "https://example.com/images/idli.jpg",
+      productImg: "https://images.unsplash.com/photo-1657196118354-f25f29fe636d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aWRsaSUyMHNhbWJhcnxlbnwwfHwwfHx8MA%3D%3D",
       itemName: "Idli Sambar",
       price: 50,
       description: "Steamed rice cakes served with sambar aur coconut chutney.",
       category: "Breakfast"
     },
     {
-      productImg: "https://example.com/images/dosa.jpg",
+      productImg: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFzYWxhJTIwRG9zYXxlbnwwfHwwfHx8MA%3D%3D",
       itemName: "Masala Dosa",
       price: 80,
       description: "Crispy dosa filled with spiced aloo aur served with chutney aur sambar.",
       category: "Breakfast"
     },
     {
-      productImg: "https://example.com/images/poha.jpg",
+      productImg: "nan",
       itemName: "Poha",
       price: 40,
       description: "Flattened chawal cooked with piyaz, rai, aur hari mirch.",
       category: "Breakfast"
     },
     {
-      productImg: "https://example.com/images/aloo_paratha.jpg",
+      productImg: "https://images.unsplash.com/photo-1683533746199-9e3920bf3eab?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YWxvbyUyMHBhcmF0aGF8ZW58MHx8MHx8fDA%3D",
       itemName: "Aloo Paratha",
       price: 60,
       description: "Garam paratha stuffed with spiced mashed aloo served with dahi.",
@@ -180,21 +181,39 @@ const menu = [
       category: "Shakes"
     }
   ];
+// electors
+let menuContainer = document.querySelector('.menu-container');
+
+// event listener
+window.addEventListener('DOMContentLoaded',()=>{
+displayMenuItems(menu)
+
+});
+
+ function displayMenuItems(menuarr){
+  let menuItems = menuarr.map((item)=>{
+    return `<div class="menu-item">
   
+          <div class="item-img">
+      
+              <img src="${item.productImg} class="product-img">
+          </div>
+          
+          <div class="item-details">
   
+              
+              <div class="menu-title">
+                  <div class="item-name">${item.itemName}</div>
+                  <div class="price">$${item.price}</div>
+              </div>
+              
+              <div class="description">${item.description}
+              </div>
+          </div>
+  </div>`
+   }) ;
+   menuItems = menuItems.join('');
+   menuContainer.innerHTML = menuItems;
+ };
 
-let img = document.querySelector('.product-img');
-let itenName = document.querySelector('.item-name');
-let price = document.querySelector('.price');
-let description = document.querySelector('.description');
 
-
-menu.forEach(item=>{
-    window.addEventListener('DOMContentLoaded',()=>{
-
-        img.src = item.productImg;
-        itenName.textContent =item.itemName;
-    })
-     
-    
-})
