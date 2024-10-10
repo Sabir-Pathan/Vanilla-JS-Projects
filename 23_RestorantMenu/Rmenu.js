@@ -16,7 +16,7 @@ const menu = [
       category: "Breakfast"
     },
     {
-      productImg: "nan",
+      productImg: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFzYWxhJTIwRG9zYXxlbnwwfHwwfHx8MA%3D%3D",
       itemName: "Poha",
       price: 40,
       description: "Flattened chawal cooked with piyaz, rai, aur hari mirch.",
@@ -30,7 +30,7 @@ const menu = [
       category: "Breakfast"
     },
     {
-      productImg: "https://example.com/images/upma.jpg",
+      productImg: "https://images.unsplash.com/photo-1630409349197-b733a524b24e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dXBtYXZ8ZW58MHx8MHx8fDA%3D",
       itemName: "Upma",
       price: 45,
       description: "Suji cooked with sabzi, rai, aur curry patta.",
@@ -74,21 +74,21 @@ const menu = [
   
     // Lunch Items
     {
-      productImg: "https://example.com/images/rajma_chawal.jpg",
+      productImg: "https://images.unsplash.com/photo-1727018953313-403d17215a1b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8UmFqbWElMjBDaGF3YWx8ZW58MHx8MHx8fDA%3D",
       itemName: "Rajma Chawal",
       price: 120,
       description: "Rajma curry served with garam chawal aur papad.",
       category: "Lunch"
     },
     {
-      productImg: "https://example.com/images/biryani.jpg",
+      productImg: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fEh5ZGVyYWJhZGklMjBCaXJ5YW5pfGVufDB8fDB8fHww",
       itemName: "Hyderabadi Biryani",
       price: 150,
       description: "Fragrant basmati chawal biryani with masaledar chicken.",
       category: "Lunch"
     },
     {
-      productImg: "https://example.com/images/paneer_butter_masala.jpg",
+      productImg: "https://images.unsplash.com/photo-1701579231378-3726490a407b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8UGFuZWVyJTIwQnV0dGVyJTIwTWFzYWxhfGVufDB8fDB8fHww",
       itemName: "Paneer Butter Masala",
       price: 140,
       description: "Creamy paneer curry cooked in makhni gravy served with naan.",
@@ -139,21 +139,21 @@ const menu = [
   
     // Shakes Items
     {
-      productImg: "https://example.com/images/mango_shake.jpg",
+      productImg: "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8TWFuZ28lMjBTaGFrZXxlbnwwfHwwfHx8MA%3D%3D",
       itemName: "Mango Shake",
       price: 90,
       description: "Rich mango shake topped with whipped cream.",
       category: "Shakes"
     },
     {
-      productImg: "https://example.com/images/banana_shake.jpg",
+      productImg: "https://plus.unsplash.com/premium_photo-1695035007016-f7976bbb64d3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGJhbmFuYSUyMFNoYWtlfGVufDB8fDB8fHww",
       itemName: "Banana Shake",
       price: 80,
       description: "Creamy banana shake blended with milk aur ice.",
       category: "Shakes"
     },
     {
-      productImg: "https://example.com/images/chocolate_shake.jpg",
+      productImg: "https://images.unsplash.com/photo-1627998691167-4dab0dfcae9f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Q2hvY29sYXRlJTIwU2hha2V8ZW58MHx8MHx8fDA%3D",
       itemName: "Chocolate Shake",
       price: 100,
       description: "Thick chocolate shake with a scoop of vanilla ice cream.",
@@ -181,27 +181,24 @@ const menu = [
       category: "Shakes"
     }
   ];
-// electors
+// Selectors
 let menuContainer = document.querySelector('.menu-container');
-
-// event listener
+let filterBtn = document.querySelector('.menu-btn');
+  
+// DOM load Event
 window.addEventListener('DOMContentLoaded',()=>{
 displayMenuItems(menu)
 
 });
 
+// creating show menu Fnc
  function displayMenuItems(menuarr){
   let menuItems = menuarr.map((item)=>{
     return `<div class="menu-item">
-  
           <div class="item-img">
-      
               <img src="${item.productImg} class="product-img">
           </div>
-          
-          <div class="item-details">
-  
-              
+          <div class="item-details">             
               <div class="menu-title">
                   <div class="item-name">${item.itemName}</div>
                   <div class="price">$${item.price}</div>
@@ -211,9 +208,29 @@ displayMenuItems(menu)
               </div>
           </div>
   </div>`
-   }) ;
-   menuItems = menuItems.join('');
-   menuContainer.innerHTML = menuItems;
+}) ;
+ menuItems = menuItems.join('');
+menuContainer.innerHTML = menuItems;
  };
+
+ // Buttons Event Listener
+filterBtn.addEventListener('click',(btn)=>{
+  let targetBtn = btn.target.id;
+
+ let btnCategory = menu.filter(item=>{
+  if(item.category === targetBtn){
+    return item;
+  } 
+  
+});
+// Call displayMenuItems func
+if(targetBtn === 'All'){
+  displayMenuItems(menu)
+}
+else{
+  displayMenuItems(btnCategory);
+
+}
+  });
 
 
