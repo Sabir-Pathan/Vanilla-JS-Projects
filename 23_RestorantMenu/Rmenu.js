@@ -232,5 +232,13 @@ else{
 
 }
   });
+  
+  let nmarr=[];
+  
+let amnt = menu.reduce((acc , val)=>{
+  return `${acc}  ${nmarr.push(val.price)} `;
+  
+  // return acc = val.push(val.category);
+},['']);
 
-
+console.log(amnt);

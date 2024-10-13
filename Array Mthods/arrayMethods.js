@@ -204,33 +204,6 @@ let arr1=str.split(',')
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // Array of user objects
 // const users = [
 //     { firstName: "Amit", lastName: "Sharma", email: "amit.sharma@example.com", city: "Delhi", phone: "9876543210" },
